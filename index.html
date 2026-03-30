@@ -6,6 +6,10 @@
 <title>PANDUAN CLICKBET88</title>
 
 <style>
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   font-family:Arial, sans-serif;
@@ -39,7 +43,7 @@ body{
   height:40px;
 }
 
-/* BUTTON SULTAN */
+/* BUTTON */
 .btn-top{
   position:relative;
   padding:8px 18px;
@@ -50,6 +54,7 @@ body{
   margin-left:10px;
   overflow:hidden;
   z-index:1;
+  transition:0.3s;
 }
 .btn-top::before{
   content:"";
@@ -59,14 +64,7 @@ body{
   right:-2px;
   bottom:-2px;
   border-radius:20px;
-  background:linear-gradient(
-    120deg,
-    transparent,
-    #00eaff,
-    transparent,
-    #00eaff,
-    transparent
-  );
+  background:linear-gradient(120deg,transparent,#00eaff,transparent,#00eaff,transparent);
   background-size:300% 300%;
   animation:petirJalan 3s linear infinite;
   z-index:-1;
@@ -84,10 +82,8 @@ body{
   100%{ background-position:300% 50%; }
 }
 .btn-top:hover{
-  box-shadow:
-    0 0 10px #00eaff,
-    0 0 20px #00eaff,
-    0 0 30px #00eaff;
+  transform:scale(1.05);
+  box-shadow:0 0 15px #00eaff;
 }
 
 /* NAVBAR */
@@ -108,6 +104,7 @@ body{
   border-bottom:2px solid #ffd700;
 }
 
+/* HEADER */
 .header{
   text-align:center;
   padding:25px;
@@ -117,19 +114,16 @@ body{
   background-size:cover;
   border-bottom:2px solid gold;
 }
-
-/* teks biasa tanpa efek */
 .red{
   color:#ff2b2b;
-  text-shadow:none;
-}
-@keyframes petirText{
-  0%{ transform:translateX(-100%); }
-  100%{ transform:translateX(100%); }
 }
 
 /* CONTAINER */
-.container{ padding:20px; }
+.container{
+  padding:20px;
+  max-width:900px;
+  margin:auto;
+}
 
 /* FAQ */
 .faq{
@@ -137,23 +131,31 @@ body{
   border-radius:12px;
   overflow:hidden;
   background:#0d2a5c;
+  transition:0.3s;
 }
 .faq-title{
   padding:15px;
   font-weight:bold;
   cursor:pointer;
   background:linear-gradient(120deg, #123a7a, #1e6fa3);
+  transition:0.3s;
+}
+.faq-title:hover{
+  background:linear-gradient(120deg,#1e6fa3,#2aa4ff);
 }
 .faq-title::after{
   content:"+";
   float:right;
 }
-.faq.active .faq-title::after{ content:"−"; }
+.faq.active .faq-title::after{
+  content:"−";
+}
 
+/* SMOOTH OPEN */
 .faq-content{
   max-height:0;
   overflow:hidden;
-  transition:0.3s;
+  transition:max-height 0.5s ease;
   background:#081a3d;
   padding:0 15px;
 }
@@ -167,10 +169,12 @@ body{
   background:#000;
   padding:10px;
   border-radius:20px;
-  box-shadow:
-    0 0 10px rgba(0,200,255,0.3),
-    0 0 20px rgba(0,200,255,0.2);
+  box-shadow:0 0 15px rgba(0,200,255,0.2);
   margin-bottom:15px;
+  transition:0.3s;
+}
+.hp-frame:hover{
+  transform:scale(1.02);
 }
 .hp-frame img{
   width:100%;
@@ -183,6 +187,42 @@ body{
   padding:15px;
   font-size:12px;
   opacity:0.7;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+  .header{
+    font-size:20px;
+    padding:20px 10px;
+  }
+
+  .btn-top{
+    padding:6px 12px;
+    font-size:12px;
+  }
+
+  .navbar{
+    font-size:12px;
+    gap:10px;
+  }
+
+  .container{
+    padding:15px;
+  }
+
+  .faq-title{
+    font-size:14px;
+  }
+
+  .faq-content{
+    font-size:13px;
+  }
+
+  .petir-kiri img{
+    height:30px;
+  }
+
 }
 </style>
 </head>
