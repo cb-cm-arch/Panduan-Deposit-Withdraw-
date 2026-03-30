@@ -6,9 +6,7 @@
 <title>PANDUAN CLICKBET88</title>
 
 <style>
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
   margin:0;
@@ -22,7 +20,7 @@ body{
   color:#fff;
 }
 
-/* TOPBAR */
+/* TOPBAR FIX */
 .topbar{
   position:relative;
   background:linear-gradient(#0a1f5c,#04123a);
@@ -30,32 +28,27 @@ body{
   justify-content:flex-end;
   align-items:center;
   padding:10px 20px;
+  flex-wrap:wrap; /* biar gak kepotong */
+  gap:10px;
 }
 
-/* PETIR KIRI */
-.petir-kiri{
-  position:absolute;
-  left:10px;
-  top:50%;
-  transform:translateY(-50%);
-}
-.petir-kiri img{
-  height:40px;
-}
-
-/* BUTTON */
+/* BUTTON SULTAN */
 .btn-top{
   position:relative;
-  padding:8px 18px;
-  border-radius:20px;
+  padding:8px 20px;
+  border-radius:25px;
   font-weight:bold;
   text-decoration:none;
   color:#fff;
-  margin-left:10px;
+  margin-left:5px;
   overflow:hidden;
   z-index:1;
-  transition:0.3s;
+  white-space:nowrap;
+  font-size:14px;
+  background:linear-gradient(45deg,#007bff,#00cfff);
 }
+
+/* GLOW */
 .btn-top::before{
   content:"";
   position:absolute;
@@ -63,46 +56,56 @@ body{
   left:-2px;
   right:-2px;
   bottom:-2px;
-  border-radius:20px;
-  background:linear-gradient(120deg,transparent,#00eaff,transparent,#00eaff,transparent);
-  background-size:300% 300%;
-  animation:petirJalan 3s linear infinite;
+  border-radius:25px;
+  background:linear-gradient(120deg,transparent,#00eaff,transparent);
+  background-size:300%;
+  animation:glowBtn 3s linear infinite;
   z-index:-1;
 }
+
+/* DALAM */
 .btn-top::after{
   content:"";
   position:absolute;
   inset:2px;
-  border-radius:20px;
+  border-radius:25px;
   background:linear-gradient(45deg,#005eff,#0099ff);
   z-index:-1;
 }
-@keyframes petirJalan{
-  0%{ background-position:0% 50%; }
-  100%{ background-position:300% 50%; }
+
+/* ANIMASI */
+@keyframes glowBtn{
+  0%{background-position:0%}
+  100%{background-position:300%}
 }
+
+/* HOVER */
 .btn-top:hover{
   transform:scale(1.05);
   box-shadow:0 0 15px #00eaff;
 }
 
+/* MOBILE FIX BIAR GAK HILANG */
+@media (max-width:480px){
+  .topbar{
+    justify-content:center;
+  }
+
+  .btn-top{
+    padding:6px 12px;
+    font-size:12px;
+  }
+}
+  
 /* NAVBAR */
 .navbar{
   background:linear-gradient(#0f3d3d,#0b2c2c);
   display:flex;
   gap:20px;
   padding:12px 20px;
-  font-size:14px;
-  overflow:auto;
 }
-.navbar a{
-  color:#fff;
-  text-decoration:none;
-}
-.navbar a.active{
-  color:#ffd700;
-  border-bottom:2px solid #ffd700;
-}
+.navbar a{color:#fff;text-decoration:none;}
+.navbar a.active{color:#ffd700;border-bottom:2px solid #ffd700;}
 
 /* HEADER */
 .header{
@@ -110,18 +113,15 @@ body{
   padding:25px;
   font-size:26px;
   font-weight:bold;
-  background:url('https://i.postimg.cc/13xhZS2v/photo-2026-03-31-01-08-32.jpg') no-repeat center;
-  background-size:cover;
+  background:url('https://i.postimg.cc/13xhZS2v/photo-2026-03-31-01-08-32.jpg') center/cover;
   border-bottom:2px solid gold;
 }
-.red{
-  color:#ff2b2b;
-}
+.red{color:#ff2b2b;}
 
 /* CONTAINER */
 .container{
   padding:20px;
-  max-width:900px;
+  max-width:1000px;
   margin:auto;
 }
 
@@ -131,19 +131,18 @@ body{
   border-radius:12px;
   overflow:hidden;
   background:#0d2a5c;
-  transition:0.3s;
 }
+
+/* TITLE */
 .faq-title{
   padding:15px;
   font-weight:bold;
   cursor:pointer;
-  background:linear-gradient(120deg, #123a7a, #1e6fa3);
-  transition:0.3s;
+  background:linear-gradient(120deg,#123a7a,#1e6fa3);
   position:relative;
 }
-.faq-title:hover{
-  background:linear-gradient(120deg,#1e6fa3,#2aa4ff);
-}
+
+/* +/- */
 .faq-title::after{
   content:"+";
   float:right;
@@ -163,44 +162,50 @@ body{
   margin:0;
   border-radius:0;
   overflow:auto;
-}
-.faq.full .faq-content{
-  max-height:none;
+  background:#081a3d;
 }
 
-/* X BUTTON */
-/* X default HILANG */
+/* DESKTOP MODE */
+@media (min-width:768px){
+  .faq.full{
+    width:900px;
+    height:90%;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(0,0,0,0.8);
+  }
+}
+
+/* CONTENT */
+.faq-content{
+  max-height:0;
+  overflow:hidden;
+  transition:0.5s;
+  padding:0 15px;
+}
+.faq.active .faq-content{
+  max-height:none;
+  padding:20px;
+}
+
+/* HIDE +/- WHEN FULL */
+.faq.full .faq-title::after{
+  display:none;
+}
+
+/* X */
 .faq-close{
   display:none;
   position:absolute;
   right:15px;
   top:15px;
   font-size:22px;
-  color:#fff;
   cursor:pointer;
-  z-index:10;
 }
-  /* SEMBUNYIKAN +/- SAAT FULL */
-.faq.full .faq-title::after{
-  display:none;
-}
-
-/* MUNCUL SAAT FULL */
 .faq.full .faq-close{
   display:block;
-}
-
-/* SMOOTH OPEN */
-.faq-content{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height 0.5s ease;
-  background:#081a3d;
-  padding:0 15px;
-}
-.faq.active .faq-content{
-  max-height:2000px;
-  padding:15px;
 }
 
 /* HP FRAME */
@@ -208,16 +213,19 @@ body{
   background:#000;
   padding:10px;
   border-radius:20px;
-  box-shadow:0 0 15px rgba(0,200,255,0.2);
   margin-bottom:15px;
-  transition:0.3s;
-}
-.hp-frame:hover{
-  transform:scale(1.02);
 }
 .hp-frame img{
   width:100%;
   border-radius:15px;
+}
+
+/* MOBILE IMPROVE */
+@media (max-width:768px){
+  .faq-content{
+    font-size:14px;
+    line-height:1.6;
+  }
 }
 
 /* FOOTER */
@@ -225,18 +233,6 @@ body{
   text-align:center;
   padding:15px;
   font-size:12px;
-  opacity:0.7;
-}
-
-/* MOBILE */
-@media (max-width:768px){
-  .header{font-size:20px;padding:20px 10px;}
-  .btn-top{padding:6px 12px;font-size:12px;}
-  .navbar{font-size:12px;gap:10px;}
-  .container{padding:15px;}
-  .faq-title{font-size:14px;}
-  .faq-content{font-size:13px;}
-  .petir-kiri img{height:30px;}
 }
 </style>
 </head>
@@ -312,14 +308,12 @@ body{
 
 <script>
 
-/* OPEN FULL */
 function openFullFaq(){
   let el = document.getElementById("faqDeposit");
   el.classList.add("active");
   el.classList.add("full");
 }
 
-/* CLOSE */
 function closeFullFaq(e){
   e.stopPropagation();
   let el = document.getElementById("faqDeposit");
