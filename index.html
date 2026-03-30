@@ -139,6 +139,7 @@ body{
   cursor:pointer;
   background:linear-gradient(120deg, #123a7a, #1e6fa3);
   transition:0.3s;
+  position:relative;
 }
 .faq-title:hover{
   background:linear-gradient(120deg,#1e6fa3,#2aa4ff);
@@ -149,6 +150,44 @@ body{
 }
 .faq.active .faq-title::after{
   content:"−";
+}
+
+/* FULL MODE */
+.faq.full{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:9999;
+  margin:0;
+  border-radius:0;
+  overflow:auto;
+}
+.faq.full .faq-content{
+  max-height:none;
+}
+
+/* X BUTTON */
+/* X default HILANG */
+.faq-close{
+  display:none;
+  position:absolute;
+  right:15px;
+  top:15px;
+  font-size:22px;
+  color:#fff;
+  cursor:pointer;
+  z-index:10;
+}
+  /* SEMBUNYIKAN +/- SAAT FULL */
+.faq.full .faq-title::after{
+  display:none;
+}
+
+/* MUNCUL SAAT FULL */
+.faq.full .faq-close{
+  display:block;
 }
 
 /* SMOOTH OPEN */
@@ -191,38 +230,13 @@ body{
 
 /* MOBILE */
 @media (max-width:768px){
-
-  .header{
-    font-size:20px;
-    padding:20px 10px;
-  }
-
-  .btn-top{
-    padding:6px 12px;
-    font-size:12px;
-  }
-
-  .navbar{
-    font-size:12px;
-    gap:10px;
-  }
-
-  .container{
-    padding:15px;
-  }
-
-  .faq-title{
-    font-size:14px;
-  }
-
-  .faq-content{
-    font-size:13px;
-  }
-
-  .petir-kiri img{
-    height:30px;
-  }
-
+  .header{font-size:20px;padding:20px 10px;}
+  .btn-top{padding:6px 12px;font-size:12px;}
+  .navbar{font-size:12px;gap:10px;}
+  .container{padding:15px;}
+  .faq-title{font-size:14px;}
+  .faq-content{font-size:13px;}
+  .petir-kiri img{height:30px;}
 }
 </style>
 </head>
@@ -249,8 +263,13 @@ body{
 
 <div class="container">
 
-<div class="faq">
-  <div class="faq-title">Cara Deposit</div>
+<div class="faq" id="faqDeposit">
+
+  <div class="faq-title" onclick="openFullFaq()">
+    Cara Deposit
+    <span class="faq-close" onclick="closeFullFaq(event)">✕</span>
+  </div>
+
   <div class="faq-content">
 
     <b>Panduan Deposit & Withdraw</b><br><br>
@@ -292,11 +311,22 @@ body{
 </div>
 
 <script>
-document.querySelectorAll(".faq").forEach(item=>{
-  item.addEventListener("click", ()=>{
-    item.classList.toggle("active");
-  });
-});
+
+/* OPEN FULL */
+function openFullFaq(){
+  let el = document.getElementById("faqDeposit");
+  el.classList.add("active");
+  el.classList.add("full");
+}
+
+/* CLOSE */
+function closeFullFaq(e){
+  e.stopPropagation();
+  let el = document.getElementById("faqDeposit");
+  el.classList.remove("active");
+  el.classList.remove("full");
+}
+
 </script>
 
 </body>
