@@ -246,8 +246,8 @@ background-repeat:no-repeat;
 </div>
 
 <div class="navbar">
-  <a href="#">HOME</a>
-  <a href="#" class="menu-merah">CLICKBET88</a>
+ <a href="#" onclick="showHome()">HOME</a>
+<a href="#" class="menu-merah" onclick="showPanduan()">CLICKBET88</a>
   <a href="#" class="active">FAQ</a>
 </div>
 
@@ -255,8 +255,51 @@ background-repeat:no-repeat;
   PANDUAN <span class="red">CLICKBET88</span>
 </div>
 
-<div class="container">
+<div class="container" id="panduanPage" style="display:none;">
+<!-- ===== HOME (CARD GAME) ===== -->
+<div id="homePage" style="display:block; padding:20px;">
 
+  <h2 style="text-align:center; margin-bottom:20px; color:#ffd700;">
+    PANDUAN <span style="color:#ff2b2b;">CLICKBET88</span>
+  </h2>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px;">
+
+    <div style="background:#0a2a6c;border-radius:12px;overflow:hidden;">
+      <img src="https://i.postimg.cc/Y2JwWSWQ/photo-2026-03-31-02-36-21.jpg" style="width:100%;">
+      <div style="padding:12px;">
+        <b>Baccarat</b>
+        <p style="font-size:12px;">Panduan bermain baccarat</p>
+        <div onclick="showPanduan()" style="background:#007bff;padding:8px;text-align:center;border-radius:8px;cursor:pointer;">
+          Read More
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#0a2a6c;border-radius:12px;overflow:hidden;">
+      <img src="https://i.postimg.cc/PqK6zSFt/photo-2026-03-31-02-30-47.jpg" style="width:100%;">
+      <div style="padding:12px;">
+        <b>Togel</b>
+        <p style="font-size:12px;">Panduan togel lengkap</p>
+        <div onclick="showPanduan()" style="background:#007bff;padding:8px;text-align:center;border-radius:8px;cursor:pointer;">
+          Read More
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#0a2a6c;border-radius:12px;overflow:hidden;">
+      <img src="https://i.postimg.cc/htLZhDLT/photo-2026-03-31-02-30-12.jpg" style="width:100%;">
+      <div style="padding:12px;">
+        <b>Slot</b>
+        <p style="font-size:12px;">Panduan slot gacor</p>
+        <div onclick="showPanduan()" style="background:#007bff;padding:8px;text-align:center;border-radius:8px;cursor:pointer;">
+          Read More
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 <!-- DEPOSIT -->
 <div class="faq">
   <div class="faq-title">Cara Deposit</div>
@@ -350,7 +393,17 @@ background-repeat:no-repeat;
   </div>
 </div>
 </div>
+<script>
+function showHome(){
+  document.getElementById("homePage").style.display="block";
+  document.getElementById("panduanPage").style.display="none";
+}
 
+function showPanduan(){
+  document.getElementById("homePage").style.display="none";
+  document.getElementById("panduanPage").style.display="block";
+}
+</script>
 <div class="footer">© 2026 CLICKBET88</div>
 
 <script>
