@@ -20,12 +20,15 @@ body{
     url('https://i.postimg.cc/HxqQT9qM/51918d4a-414e-4e49-b60e-6573301f0af5.jpg');
     
   background-size:cover;
-  background-position:center center;
-  background-repeat:no-repeat;
+background-position:center;
+background-repeat:no-repeat;
   background-attachment:fixed;
 
   min-height:100vh;
   color:#fff;
+}
+  body{
+  background-color:#000;
 }
   /* ===== FIX SCROLL DESKTOP ===== */
 @media (min-width:1024px){
@@ -77,7 +80,14 @@ body{
 }
 .red{color:#ff2b2b;}
 
-.container{padding:20px;max-width:900px;margin:auto;}
+.container{
+  padding:20px;
+  max-width:900px;
+  margin:auto;
+
+  /* TAMBAHAN BIAR GAK PUTUS */
+  background:transparent;
+}
 
 /* FAQ */
 .faq{
