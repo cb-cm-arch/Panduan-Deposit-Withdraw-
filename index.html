@@ -15,136 +15,30 @@ body{
     linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url('https://i.postimg.cc/HxqQT9qM/51918d4a-414e-4e49-b60e-6573301f0af5.jpg');
   background-size:cover;
-  background-position:center center;
-  background-repeat:no-repeat;
-  background-attachment:scroll; /* INI KUNCI */
-  min-height:100vh;
+  background-position:center;
   color:#fff;
 }
-/* TOPBAR FIX */
+
+/* TOPBAR */
 .topbar{
-  position:relative;
   background:linear-gradient(#0a1f5c,#04123a);
   display:flex;
   justify-content:flex-end;
   align-items:center;
   padding:10px 20px;
-  flex-wrap:wrap;
-  gap:10px;
 }
 
-/* GIF KIRI */
-.petir-kiri{
-  margin-right:auto;
-}
-.petir-kiri img{
-  height:40px;
-}
+.petir-kiri{margin-right:auto;}
+.petir-kiri img{height:40px;}
 
-/* BUTTON */
 .btn-top{
-  position:relative;
   padding:8px 20px;
   border-radius:25px;
   font-weight:bold;
   text-decoration:none;
   color:#fff;
   margin-left:5px;
-  overflow:hidden;
-  z-index:1;
-  white-space:nowrap;
-  font-size:14px;
   background:linear-gradient(45deg,#007bff,#00cfff);
-}
-
-/* GLOW */
-.btn-top::before{
-  content:"";
-  position:absolute;
-  top:-2px;
-  left:-2px;
-  right:-2px;
-  bottom:-2px;
-  border-radius:25px;
-  background:linear-gradient(120deg,transparent,#00eaff,transparent);
-  background-size:300%;
-  animation:glowBtn 3s linear infinite;
-  z-index:-1;
-}
-
-/* DALAM */
-.btn-top::after{
-  content:"";
-  position:absolute;
-  inset:2px;
-  border-radius:25px;
-  background:linear-gradient(45deg,#005eff,#0099ff);
-  z-index:-1;
-}
-
-/* ANIMASI */
-@keyframes glowBtn{
-  0%{background-position:0%}
-  100%{background-position:300%}
-}
-
-/* HOVER */
-.btn-top:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 15px #00eaff;
-}
-
-/* MOBILE */
-@media (max-width:768px){
-
-  body{background-attachment:scroll;}
-
-  .topbar{
-    justify-content:center !important;
-    padding:10px;
-    gap:8px;
-  }
-
-  /* GIF PINDAH KE BAWAH */
-  .petir-kiri{
-    order:3;
-    width:100%;
-    text-align:center;
-    margin-top:5px;
-  }
-
-  .petir-kiri img{
-    height:35px;
-  }
-
-  .btn-top{
-    padding:8px 14px;
-    font-size:13px;
-  }
-
-  .header{
-    font-size:20px;
-    padding:18px 10px;
-  }
-
-  .container{padding:15px;}
-
-  .faq-title{font-size:14px;}
-
-  .faq-content{
-    font-size:14px;
-    line-height:1.6;
-    padding:15px;
-  }
-
-  .hp-frame{
-    padding:8px;
-    border-radius:15px;
-  }
-
-  .hp-frame img{
-    border-radius:12px;
-  }
 }
 
 /* NAVBAR */
@@ -153,27 +47,11 @@ body{
   display:flex;
   gap:20px;
   padding:12px 20px;
+}
+.navbar a{color:#fff;text-decoration:none;}
+.navbar a.menu-merah{color:#ff2b2b;font-weight:bold;}
+.navbar a.active{color:#ffd700;border-bottom:2px solid #ffd700;}
 
-  /* glow */
-  box-shadow:0 0 15px rgba(0,100,255,0.6);
-}
-/* DEFAULT PUTIH */
-.navbar a{
-  color:#fff;
-  text-decoration:none;
-}
-
-/* KHUSUS CLICKBET88 */
-.navbar a.menu-merah{
-  color:#ff2b2b !important;
-  font-weight:bold;
-}
-
-/* FAQ ACTIVE */
-.navbar a.active{
-  color:#ffd700;
-  border-bottom:2px solid #ffd700;
-}
 /* HEADER */
 .header{
   text-align:center;
@@ -185,179 +63,74 @@ body{
 }
 .red{color:#ff2b2b;}
 
-/* CONTAINER */
-.container{
-  padding:20px;
-  max-width:1000px;
-  margin:auto;
-}
+.container{padding:20px;max-width:900px;margin:auto;}
 
 /* FAQ */
 .faq{
-  margin-bottom:15px;
   border-radius:12px;
-  overflow:hidden;
-  background:#0d2a5c;
+  margin-bottom:15px;
+  background:linear-gradient(145deg,#0a2a6c,#031a3c);
+  border:1px solid rgba(0,150,255,0.3);
+  box-shadow:0 0 12px rgba(0,150,255,0.25);
 }
 
 .faq-title{
-  padding:15px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px;
   font-weight:bold;
   cursor:pointer;
-  background:linear-gradient(120deg,#123a7a,#1e6fa3);
-  position:relative;
+}
+
+.faq-title::before{
+  content:"";
+  width:4px;
+  height:18px;
+  background:#ffb400;
+  border-radius:2px;
+  margin-right:10px;
 }
 
 .faq-title::after{
-  content:"+";
-  float:right;
+  content:"▼";
+  font-size:12px;
+  transition:0.3s;
 }
+
 .faq.active .faq-title::after{
-  content:"−";
-}
-
-/* FULL */
-.faq.full{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:9999;
-  margin:0;
-  border-radius:0;
-  overflow:auto;
-  background:#081a3d;
-}
-
-/* DESKTOP POPUP */
-@media (min-width:768px){
-  .faq.full{
-    width:900px;
-    height:90%;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    border-radius:20px;
-    box-shadow:0 0 40px rgba(0,0,0,0.8);
-  }
+  transform:rotate(180deg);
 }
 
 .faq-content{
   max-height:0;
   overflow:hidden;
-  transition:0.5s;
+  transition:0.4s;
   padding:0 15px;
+  background:#061833;
 }
 .faq.active .faq-content{
-  max-height:none;
+  max-height:2000px;
   padding:20px;
 }
 
-.faq.full .faq-title::after{
-  display:none;
-}
-
-/* CLOSE */
-.faq-close{
-  display:none;
-  position:absolute;
-  right:15px;
-  top:15px;
-  font-size:22px;
-  cursor:pointer;
-}
-.faq.full .faq-close{
-  display:block;
-}
-
-/* HP */
+/* gambar */
 .hp-frame{
   background:#000;
   padding:10px;
   border-radius:20px;
   margin-bottom:15px;
 }
-.hp-frame img{
-  width:100%;
-  border-radius:15px;
+.hp-frame img{width:100%;border-radius:15px;}
+
+.title-center{
+  text-align:center;
+  font-weight:bold;
+  margin:15px 0;
 }
 
 /* FOOTER */
-.footer{
-  text-align:center;
-  padding:15px;
-  font-size:12px;
-}
-<style>
-
-/* CSS lama kakak */
-/* ... */
-
-/* ⬇️ TAMBAHKAN DI SINI */
-.section-center{
-  text-align:center;
-}
-
-.title-center{
-  display:block;
-  text-align:center;
-  font-weight:bold;
-  margin:15px 0 10px;
-  font-size:16px;
-}
-
-.hp-frame{
-  display:flex;
-  justify-content:center;
-}
-/* ===== TITLE SULTAN EFFECT ===== */
-.title-center{
-  display:block;
-  text-align:center;
-  font-weight:bold;
-  margin:20px auto 10px;
-  font-size:16px;
-  color:#fff;
-  padding:10px 15px;
-  width:fit-content;
-  border-radius:10px;
-
-  /* background gradient */
-  background:linear-gradient(90deg,#0a2a6c,#1e90ff,#0a2a6c);
-
-  /* glow */
-  box-shadow:0 0 15px rgba(0,170,255,0.6);
-
-  /* text glow */
-  text-shadow:0 0 8px #00eaff;
-
-  transition:0.3s;
-}
-
-/* hover efek */
-.title-center:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #00eaff;
-}
-
-/* garis neon bawah */
-.title-center::after{
-  content:"";
-  display:block;
-  height:2px;
-  margin-top:6px;
-  background:linear-gradient(90deg,transparent,#00eaff,transparent);
-  animation:lineGlow 2s linear infinite;
-}
-
-@keyframes lineGlow{
-  0%{background-position:0%}
-  100%{background-position:200%}
-}
-</style>
-
-  
+.footer{text-align:center;padding:15px;font-size:12px;}
 </style>
 </head>
 
@@ -383,64 +156,77 @@ body{
 
 <div class="container">
 
-<div class="faq" id="faqDeposit">
-
-  <div class="faq-title" onclick="openFullFaq()">
-    Cara Deposit
-    <span class="faq-close" onclick="closeFullFaq(event)">✕</span>
-  </div>
-
+<!-- DEPOSIT -->
+<div class="faq">
+  <div class="faq-title">Cara Deposit</div>
   <div class="faq-content">
 
-    <b>Panduan Deposit & Withdraw</b><br><br>
+    Kakak klik ikon garis tiga (☰) di pojok kanan atas aplikasi ya.<br>
+    Lalu pilih menu Deposit.<br>
+    Pilih metode pembayaran yang tersedia<br>
+    Masukkan nominal sesuai Deposit kakak<br>
+    Upload bukti transfer jika diperlukan<br>
+    Klik Deposit untuk melanjutkan<br>
+    Selesai, silakan tunggu prosesnya ya kakak 🙏<br><br>
 
-  Kakak klik ikon garis tiga (☰) di pojok kanan atas aplikasi ya.<br>
-  Lalu pilih menu Deposit atau Withdraw.<br>
-  Pilih metode pembayaran yang tersedia<br>
-  Masukkan nominal sesuai Deposit kakak<br>
-  Upload bukti transfer jika diperlukan<br>
-  Klik Deposit / Withdraw untuk melanjutkan<br>
-  Klik Selesai, silakan tunggu prosesnya ya kakak<br><br>
+    <div class="title-center">DEPOSIT QRIS</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/htLZhDLT/photo-2026-03-31-02-30-12.jpg">
+    </div>
 
-<div class="section-center">
+    <div class="title-center">DEPOSIT BANK</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/PqK6zSFt/photo-2026-03-31-02-30-47.jpg">
+    </div>
 
-  <b class="title-center">DEPOSIT QRIS</b>
-  <div class="hp-frame">
-    <img src="https://i.postimg.cc/htLZhDLT/photo-2026-03-31-02-30-12.jpg">
+    <div class="title-center">HALAMAN DEPOSIT</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/Y2JwWSWQ/photo-2026-03-31-02-36-21.jpg">
+    </div>
+
   </div>
+</div>
 
-  <b class="title-center">DEPOSIT BANK</b>
-  <div class="hp-frame">
-    <img src="https://i.postimg.cc/PqK6zSFt/photo-2026-03-31-02-30-47.jpg">
+<!-- WITHDRAW -->
+<div class="faq">
+  <div class="faq-title">Cara Withdraw</div>
+  <div class="faq-content">
+
+    Kakak klik ikon garis tiga (☰) di pojok kanan atas aplikasi ya.<br>
+    Lalu pilih menu Withdraw.<br><br>
+
+    Jika ingin Withdraw ke Rekening BANK, silakan pilih metode BANK.<br>
+    Jika ingin Withdraw ke DANA / E-Wallet lainnya, silakan pilih E-Wallet.<br><br>
+
+    Masukkan nominal penarikan sesuai keinginan kakak<br>
+    Pastikan data rekening sudah benar<br>
+    Klik Withdraw untuk melanjutkan<br>
+    Selesai, silakan tunggu proses dari sistem ya kakak 🙏✨<br><br>
+
+    <div class="title-center">WITHDRAW BANK</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/bwMYkKr8/photo-2026-04-01-10-08-42.jpg">
+    </div>
+
+    <div class="title-center">WITHDRAW E-WALLET</div>
+    <div class="hp-frame">
+      <img src="https://i.postimg.cc/5yM6vDPX/photo-2026-04-01-10-07-27.jpg">
+    </div>
+
   </div>
-
-  <div class="title-center">HALAMAN DEPOSIT </div>
-  <div class="hp-frame">
-    <img src="https://i.postimg.cc/Y2JwWSWQ/photo-2026-03-31-02-36-21.jpg">
-  </div>
-
-</div>
 </div>
 
 </div>
 
-<div class="footer">
-© 2026 CLICKBET88
-</div>
+<div class="footer">© 2026 CLICKBET88</div>
 
 <script>
-function openFullFaq(){
-  let el = document.getElementById("faqDeposit");
-  el.classList.add("active");
-  el.classList.add("full");
-}
-
-function closeFullFaq(e){
-  e.stopPropagation();
-  let el = document.getElementById("faqDeposit");
-  el.classList.remove("active");
-  el.classList.remove("full");
-}
+document.querySelectorAll('.faq-title').forEach(item=>{
+  item.addEventListener('click', function(){
+    let parent = this.parentElement;
+    parent.classList.toggle('active');
+  });
+});
 </script>
 
 </body>
