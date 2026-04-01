@@ -8,17 +8,25 @@
 <style>
 html{scroll-behavior:smooth;}
 
+html, body{
+  height:100%;
+}
+
 body{
   margin:0;
   font-family:Arial, sans-serif;
   background:
     linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url('https://i.postimg.cc/HxqQT9qM/51918d4a-414e-4e49-b60e-6573301f0af5.jpg');
+    
   background-size:cover;
-  background-position:center;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+
+  min-height:100vh;
   color:#fff;
 }
-
 /* TOPBAR */
 .topbar{
   background:linear-gradient(#0a1f5c,#04123a);
