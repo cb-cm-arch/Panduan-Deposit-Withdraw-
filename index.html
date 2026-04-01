@@ -154,9 +154,23 @@ body{
   gap:20px;
   padding:12px 20px;
 }
-.navbar a{color:#fff;text-decoration:none;}
-.navbar a.active{color:#ffd700;border-bottom:2px solid #ffd700;}
+/* DEFAULT PUTIH */
+.navbar a{
+  color:#fff;
+  text-decoration:none;
+}
 
+/* KHUSUS CLICKBET88 */
+.navbar a.menu-merah{
+  color:#ff2b2b !important;
+  font-weight:bold;
+}
+
+/* FAQ ACTIVE */
+.navbar a.active{
+  color:#ffd700;
+  border-bottom:2px solid #ffd700;
+}
 /* HEADER */
 .header{
   text-align:center;
@@ -272,6 +286,75 @@ body{
   padding:15px;
   font-size:12px;
 }
+<style>
+
+/* CSS lama kakak */
+/* ... */
+
+/* ⬇️ TAMBAHKAN DI SINI */
+.section-center{
+  text-align:center;
+}
+
+.title-center{
+  display:block;
+  text-align:center;
+  font-weight:bold;
+  margin:15px 0 10px;
+  font-size:16px;
+}
+
+.hp-frame{
+  display:flex;
+  justify-content:center;
+}
+/* ===== TITLE SULTAN EFFECT ===== */
+.title-center{
+  display:block;
+  text-align:center;
+  font-weight:bold;
+  margin:20px auto 10px;
+  font-size:16px;
+  color:#fff;
+  padding:10px 15px;
+  width:fit-content;
+  border-radius:10px;
+
+  /* background gradient */
+  background:linear-gradient(90deg,#0a2a6c,#1e90ff,#0a2a6c);
+
+  /* glow */
+  box-shadow:0 0 15px rgba(0,170,255,0.6);
+
+  /* text glow */
+  text-shadow:0 0 8px #00eaff;
+
+  transition:0.3s;
+}
+
+/* hover efek */
+.title-center:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px #00eaff;
+}
+
+/* garis neon bawah */
+.title-center::after{
+  content:"";
+  display:block;
+  height:2px;
+  margin-top:6px;
+  background:linear-gradient(90deg,transparent,#00eaff,transparent);
+  animation:lineGlow 2s linear infinite;
+}
+
+@keyframes lineGlow{
+  0%{background-position:0%}
+  100%{background-position:200%}
+}
+</style>
+
+  
 </style>
 </head>
 
@@ -287,7 +370,7 @@ body{
 
 <div class="navbar">
   <a href="#">HOME</a>
-  <a href="#">CLICKBET88</a>
+  <a href="#" class="menu-merah">CLICKBET88</a>
   <a href="#" class="active">FAQ</a>
 </div>
 
@@ -308,34 +391,32 @@ body{
 
     <b>Panduan Deposit & Withdraw</b><br><br>
 
-    1. Klik ikon garis tiga ( 三 ) di pojok kanan atas aplikasi.<br>
-    2. Pilih menu Deposit atau Withdraw.<br>
-    3. Pilih metode pembayaran<br>
-    4. Masukkan jumlah<br>
-    5. Upload bukti transfer<br>
-    6. Klik Deposit / Withdraw<br>
-    7. Selesai<br><br>
+  Kakak klik ikon garis tiga (☰) di pojok kanan atas aplikasi ya.<br>
+  Lalu pilih menu Deposit atau Withdraw.<br>
+  Pilih metode pembayaran yang tersedia<br>
+  Masukkan nominal sesuai Deposit kakak<br>
+  Upload bukti transfer jika diperlukan<br>
+  Klik Deposit / Withdraw untuk melanjutkan<br>
+  Klik Selesai, silakan tunggu prosesnya ya kakak<br><br>
 
-    <div class="hp-frame">
-      <img src="https://i.postimg.cc/Qt0RC8r1/photo-2026-03-31-02-28-30.jpg">
-    </div>
+<div class="section-center">
 
-    <b>QRIS</b>
-    <div class="hp-frame">
-      <img src="https://i.postimg.cc/htLZhDLT/photo-2026-03-31-02-30-12.jpg">
-    </div>
-
-    <b>Bank</b>
-    <div class="hp-frame">
-      <img src="https://i.postimg.cc/PqK6zSFt/photo-2026-03-31-02-30-47.jpg">
-    </div>
-
-    <b>Halaman Deposit</b>
-    <div class="hp-frame">
-      <img src="https://i.postimg.cc/Y2JwWSWQ/photo-2026-03-31-02-36-21.jpg">
-    </div>
-
+  <b class="title-center">DEPOSIT QRIS</b>
+  <div class="hp-frame">
+    <img src="https://i.postimg.cc/htLZhDLT/photo-2026-03-31-02-30-12.jpg">
   </div>
+
+  <b class="title-center">DEPOSIT BANK</b>
+  <div class="hp-frame">
+    <img src="https://i.postimg.cc/PqK6zSFt/photo-2026-03-31-02-30-47.jpg">
+  </div>
+
+  <div class="title-center">HALAMAN DEPOSIT </div>
+  <div class="hp-frame">
+    <img src="https://i.postimg.cc/Y2JwWSWQ/photo-2026-03-31-02-36-21.jpg">
+  </div>
+
+</div>
 </div>
 
 </div>
