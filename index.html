@@ -136,7 +136,84 @@ body{
   font-weight:bold;
   margin:15px 0;
 }
+/* ===== RESPONSIVE HP ===== */
+@media (max-width:768px){
 
+  .topbar{
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  .petir-kiri{
+    order:3;
+    width:100%;
+    text-align:center;
+    margin-top:5px;
+  }
+
+  .petir-kiri img{
+    height:35px;
+  }
+
+  .btn-top{
+    padding:8px 14px;
+    font-size:13px;
+  }
+
+  .navbar{
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .header{
+    font-size:20px;
+    padding:18px 10px;
+  }
+
+  .container{
+    padding:15px;
+  }
+
+  .faq-title{
+    font-size:14px;
+    padding:14px;
+  }
+
+  .faq-content{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  .hp-frame{
+    padding:8px;
+    border-radius:15px;
+  }
+
+  .hp-frame img{
+    border-radius:12px;
+  }
+
+}
+
+/* ===== DESKTOP LEBIH SULTAN ===== */
+@media (min-width:1024px){
+
+  .container{
+    max-width:1000px;
+  }
+
+  .faq{
+    transition:0.3s;
+  }
+
+  .faq:hover{
+    transform:scale(1.01);
+    box-shadow:0 0 20px rgba(0,150,255,0.4);
+  }
+
+}
 /* FOOTER */
 .footer{text-align:center;padding:15px;font-size:12px;}
 </style>
