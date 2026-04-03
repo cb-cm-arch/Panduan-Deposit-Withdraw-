@@ -330,7 +330,7 @@ background-repeat:no-repeat;
 
 <div class="topbar">
   <div class="petir-kiri">
-    <img src="https://cb88autojpterus03.com/storage/webpersonalize/d5982f2c-2832-43af-b3f4-c662890c5709.gif">
+    <img src="https://jadijuragandiclickbet88-03.xyz/storage/webpersonalize/d54f5304-03b3-49f7-b283-e6fe0c595ca7.gif">
   </div>
   <a href="https://cb88fulljpterus.com/register" target="_blank" class="btn-top">MASUK</a>
 <a href="https://cb88fulljpterus.com/register" target="_blank" class="btn-top">DAFTAR</a>
@@ -350,11 +350,9 @@ background-repeat:no-repeat;
 <div class="container" id="homePage">
 
   <!-- GAMBAR -->
-<div id="slotImage" class="slot-sultan" onclick="toggleSlot()">
-    <img src="https://i.postimg.cc/FzkJ8HgN/c77df877-476b-4ebe-a992-142840c2cb64.png"
-    onclick="toggleSlot()"
-    style="width:100%; border-radius:15px; cursor:pointer;">
-  </div>
+<div id="slotImage" class="slot-sultan">
+  <img src="https://i.postimg.cc/FzkJ8HgN/c77df877-476b-4ebe-a992-142840c2cb64.png">
+</div>
 
   <!-- TULISAN -->
 <div onclick="toggleSlot()" id="btnSlot" class="btn-sultan">
@@ -598,18 +596,20 @@ document.querySelectorAll('.faq-title').forEach(item=>{
 
 <script>
 function toggleSlot(){
-  let el = document.getElementById("slotText");
+  let text = document.getElementById("slotText");
+  let img = document.getElementById("slotImage");
   let btn = document.getElementById("btnSlot");
 
-  if(el.style.display === "none" || el.style.display === ""){
-    el.style.display = "block";
+  if(text.style.display === "none" || text.style.display === ""){
+    text.style.display = "block";
+    img.style.display = "none";   // 🔥 gambar hilang
     btn.innerHTML = "TUTUP";
   } else {
-    el.style.display = "none";
+    text.style.display = "none";
+    img.style.display = "block";  // 🔥 gambar balik
     btn.innerHTML = "PANDUAN SLOT";
   }
 }
 </script>
-
 </body>
 </html>
