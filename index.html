@@ -137,7 +137,62 @@ background-repeat:no-repeat;
   max-height:none;
   padding:20px;
 }
+/* ===== SULTAN EFFECT ===== */
+.slot-sultan{
+  border-radius:20px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:0.4s;
+  box-shadow:0 0 20px rgba(0,150,255,0.6);
+  position:relative;
+}
 
+/* efek kilat jalan */
+.slot-sultan::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, rgba(0,255,255,0.4), transparent);
+  transition:0.6s;
+}
+
+.slot-sultan:hover::after{
+  left:100%;
+}
+
+.slot-sultan:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 40px rgba(0,200,255,1);
+}
+
+.slot-sultan img{
+  width:100%;
+  display:block;
+}
+
+/* BUTTON */
+.btn-sultan{
+  text-align:center;
+  margin:15px auto;
+  padding:10px;
+  width:80%;
+  border-radius:25px;
+  background:linear-gradient(45deg,#00c6ff,#0072ff);
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 0 15px rgba(0,150,255,0.7);
+}
+
+.btn-sultan:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 30px rgba(0,200,255,1);
+}
+
+  
 /* gambar */
 .hp-frame{
   background:#000;
@@ -212,7 +267,43 @@ background-repeat:no-repeat;
   }
 
 }
+/* TEXT SULTAN */
+.slot-text-sultan{
+  background:rgba(0,0,0,0.6);
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 0 15px rgba(0,150,255,0.4);
+  animation:fadeUp 0.5s ease;
+}
 
+/* TITLE */
+.title-sultan{
+  font-weight:bold;
+  font-size:16px;
+  color:#00eaff;
+  margin-bottom:10px;
+  text-shadow:0 0 8px rgba(0,200,255,0.8);
+}
+
+/* LIST */
+.list-sultan{
+  line-height:1.8;
+  font-size:14px;
+  color:#fff;
+  padding-left:5px;
+}
+
+/* ANIMASI */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 /* ===== DESKTOP LEBIH SULTAN ===== */
 @media (min-width:1024px){
 
@@ -247,7 +338,7 @@ background-repeat:no-repeat;
 
 <div class="navbar">
  <a href="#" onclick="showHome()">HOME</a>
-<a href="#" class="menu-merah" onclick="showPanduan()">CLICKBET88</a>
+<a href="javascript:void(0)" class="menu-merah" onclick="showPanduan()">CLICKBET88</a>
   <a href="#" class="active">FAQ</a>
 </div>
 
@@ -259,41 +350,47 @@ background-repeat:no-repeat;
 <div class="container" id="homePage">
 
   <!-- GAMBAR -->
-  <div id="slotImage" style="text-align:center; margin-bottom:10px;">
+<div id="slotImage" class="slot-sultan" onclick="toggleSlot()">
     <img src="https://i.postimg.cc/FzkJ8HgN/c77df877-476b-4ebe-a992-142840c2cb64.png"
     onclick="toggleSlot()"
     style="width:100%; border-radius:15px; cursor:pointer;">
   </div>
 
   <!-- TULISAN -->
-  <div onclick="toggleSlot()" id="btnSlot"
-  style="text-align:center; font-weight:bold; cursor:pointer; margin-bottom:15px;">
-    Lihat panduan ▶
-  </div>
+<div onclick="toggleSlot()" id="btnSlot" class="btn-sultan">
+  PANDUAN SLOT
+</div>
 
   <!-- ISI -->
-  <div id="slotText" style="display:none; line-height:1.8; font-size:15px;">
+<div id="slotText" class="slot-text-sultan" style="display:none;">
 
-    ✨ Cara Main Slot untuk Kakak:<br><br>
+  <div class="title-sultan">✨ Cara Main Slot untuk Kakak</div>
 
+  <div class="list-sultan">
     🎰 Pilih game slot favorit kakak<br>
     💰 Tentukan nominal taruhan<br>
     ⚙️ Atur jumlah spin<br>
-    ▶️ Klik SPIN untuk mulai<br><br>
+    ▶️ Klik SPIN untuk mulai
+  </div>
 
-    💡 Tips Biar Gacor:<br><br>
+  <div class="title-sultan" style="margin-top:20px;">💡 Tips Biar Gacor</div>
 
+  <div class="list-sultan">
     🔥 Main santai ya kakak<br>
     🔥 Gunakan auto spin<br>
     🔥 Perhatikan pola sebelum naik bet<br>
-    🔥 Kelola saldo dengan baik<br><br>
+    🔥 Kelola saldo dengan baik
+  </div>
 
-    ⚠️ Penting:<br>
+  <div class="title-sultan" style="margin-top:20px;">⚠️ Penting</div>
+
+  <div class="list-sultan">
     Jangan terlalu nafsu ya kakak 🙏
-
   </div>
 
 </div>
+  </div>
+
 <!-- ================= PANDUAN CLICKBET88 ================= -->
 <div class="container" id="panduanPage" style="display:none;">
 
@@ -506,10 +603,10 @@ function toggleSlot(){
 
   if(el.style.display === "none" || el.style.display === ""){
     el.style.display = "block";
-    btn.innerHTML = "Tutup ▲";
+    btn.innerHTML = "TUTUP";
   } else {
     el.style.display = "none";
-    btn.innerHTML = "Lihat panduan ▶";
+    btn.innerHTML = "PANDUAN SLOT";
   }
 }
 </script>
