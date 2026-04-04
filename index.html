@@ -57,115 +57,17 @@ background-repeat:no-repeat;
   margin-left:5px;
   background:linear-gradient(45deg,#007bff,#00cfff);
 }
-.btn-top::before{
-  content:"";
-  position:absolute;
-  inset:-3px;
-  border-radius:30px;
-  background: url("https://cb88autojpterus03.com/storage/webpersonalize/d5982f2c-2832-43af-b3f4-c662890c5709.gif");
-  background-size:cover;
-  opacity:0.8;
-  z-index:-1;
-}
-/* ===== NAVBAR SULTAN ===== */
+
+/* NAVBAR */
 .navbar{
-  background: linear-gradient(90deg,#020b1f,#041a3a,#020b1f);
+  background:linear-gradient(90deg,#001f5c,#0047ff,#001f5c);
   display:flex;
   gap:20px;
   padding:12px 20px;
-
-  border-bottom:1px solid rgba(0,150,255,0.2);
-  box-shadow: 0 0 15px rgba(0,100,255,0.2);
 }
-
-/* MENU KIRI */
-.nav-left{
-  display:flex;
-  gap:15px;
-}
-
-.navbar a{
-  color:#d6eaff;
-  text-decoration:none;
-  opacity:0.8;
-}
-
-.navbar a:hover{
-  color:#00cfff;
-  opacity:1;
-}
-
-.navbar a.active{
-  color:#00eaff;
-  border-bottom:2px solid #00eaff;
-}
-
-/* RIGHT */
-.nav-right{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.search{
-  padding:6px 10px;
-  border-radius:15px;
-  border:none;
-  background:rgba(255,255,255,0.1);
-  color:#fff;
-  font-size:12px;
-}
-
-/* BUTTON */
-.btn-nav{
-  padding:6px 12px;
-  border-radius:20px;
-  background:linear-gradient(45deg,#00c6ff,#0072ff);
-  color:#fff;
-  text-decoration:none;
-  font-size:12px;
-}
-
-/* ===== MOBILE ===== */
-.mobile-icons{
-  display:none;
-}
-
-.mobile-box{
-  display:none;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-
-  .nav-right,
-  .nav-left{
-    display:none;
-  }
-
-  .mobile-icons{
-    display:flex;
-    gap:10px;
-    font-size:18px;
-  }
-
-  .mobile-box{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    padding:10px;
-    background:#0b3d3d;
-  }
-
-  .mobile-box a{
-    border:1px solid rgba(255,255,255,0.2);
-    padding:8px 12px;
-    border-radius:10px;
-    color:#fff;
-    text-decoration:none;
-    font-size:12px;
-  }
-}
+.navbar a{color:#fff;text-decoration:none;}
+.navbar a.menu-merah{color:#ff2b2b;font-weight:bold;}
+.navbar a.active{color:#ffd700;border-bottom:2px solid #ffd700;}
 
 /* HEADER */
 .header{
@@ -444,25 +346,6 @@ background-repeat:no-repeat;
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
- /* ===== BUTTON PETIR BIRU SULTAN ===== */
-.btn-top{
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/* RING PETIR */
-
-
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-
-  animation: petirLoop 2s linear infinite;
-}
-
 /* FOOTER */
 .footer{text-align:center;padding:15px;font-size:12px;}
 </style>
