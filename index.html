@@ -57,17 +57,115 @@ background-repeat:no-repeat;
   margin-left:5px;
   background:linear-gradient(45deg,#007bff,#00cfff);
 }
-
-/* NAVBAR */
+.btn-top::before{
+  content:"";
+  position:absolute;
+  inset:-3px;
+  border-radius:30px;
+  background: url("https://cb88autojpterus03.com/storage/webpersonalize/d5982f2c-2832-43af-b3f4-c662890c5709.gif");
+  background-size:cover;
+  opacity:0.8;
+  z-index:-1;
+}
+/* ===== NAVBAR SULTAN ===== */
 .navbar{
-  background:linear-gradient(90deg,#001f5c,#0047ff,#001f5c);
+  background: linear-gradient(90deg,#020b1f,#041a3a,#020b1f);
   display:flex;
   gap:20px;
   padding:12px 20px;
+
+  border-bottom:1px solid rgba(0,150,255,0.2);
+  box-shadow: 0 0 15px rgba(0,100,255,0.2);
 }
-.navbar a{color:#fff;text-decoration:none;}
-.navbar a.menu-merah{color:#ff2b2b;font-weight:bold;}
-.navbar a.active{color:#ffd700;border-bottom:2px solid #ffd700;}
+
+/* MENU KIRI */
+.nav-left{
+  display:flex;
+  gap:15px;
+}
+
+.navbar a{
+  color:#d6eaff;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.navbar a:hover{
+  color:#00cfff;
+  opacity:1;
+}
+
+.navbar a.active{
+  color:#00eaff;
+  border-bottom:2px solid #00eaff;
+}
+
+/* RIGHT */
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.search{
+  padding:6px 10px;
+  border-radius:15px;
+  border:none;
+  background:rgba(255,255,255,0.1);
+  color:#fff;
+  font-size:12px;
+}
+
+/* BUTTON */
+.btn-nav{
+  padding:6px 12px;
+  border-radius:20px;
+  background:linear-gradient(45deg,#00c6ff,#0072ff);
+  color:#fff;
+  text-decoration:none;
+  font-size:12px;
+}
+
+/* ===== MOBILE ===== */
+.mobile-icons{
+  display:none;
+}
+
+.mobile-box{
+  display:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .nav-right,
+  .nav-left{
+    display:none;
+  }
+
+  .mobile-icons{
+    display:flex;
+    gap:10px;
+    font-size:18px;
+  }
+
+  .mobile-box{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    padding:10px;
+    background:#0b3d3d;
+  }
+
+  .mobile-box a{
+    border:1px solid rgba(255,255,255,0.2);
+    padding:8px 12px;
+    border-radius:10px;
+    color:#fff;
+    text-decoration:none;
+    font-size:12px;
+  }
+}
 
 /* HEADER */
 .header{
@@ -75,7 +173,7 @@ background-repeat:no-repeat;
   padding:25px;
   font-size:26px;
   font-weight:bold;
-  background:url('https://i.postimg.cc/13xhZS2v/photo-2026-03-31-01-08-32.jpg') center/cover;
+  background:none; /* 🔥 HAPUS BACKGROUND */
   border-bottom:2px solid gold;
 }
 .red{color:#ff2b2b;}
@@ -267,60 +365,104 @@ background-repeat:no-repeat;
   }
 
 }
-/* TEXT SULTAN */
-.slot-text-sultan{
-  background:rgba(0,0,0,0.6);
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 0 15px rgba(0,150,255,0.4);
-  animation:fadeUp 0.5s ease;
+/* ===== RUNNING TEXT SULTAN CLEAN ===== */
+.running-text {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 0;
+
+  /* background biru sultan tipis */
+  background: linear-gradient(
+    90deg,
+    rgba(0, 80, 160, 0.15),
+    rgba(0, 150, 255, 0.25),
+    rgba(0, 80, 160, 0.15)
+  );
 }
 
-/* TITLE */
-.title-sultan{
-  font-weight:bold;
-  font-size:16px;
-  color:#00eaff;
-  margin-bottom:10px;
-  text-shadow:0 0 8px rgba(0,200,255,0.8);
+/* TEKS */
+.running-text span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: jalanText 18s linear infinite;
+
+  font-size: 13px;
+  letter-spacing: 0.6px;
+
+  /* warna biru sultan */
+  color: #66e0ff;
+
+  /* glow halus (premium, bukan norak) */
+  text-shadow:
+    0 0 6px rgba(0, 200, 255, 0.4),
+    0 0 12px rgba(0, 150, 255, 0.2);
 }
 
-/* LIST */
-.list-sultan{
-  line-height:1.8;
-  font-size:14px;
-  color:#fff;
-  padding-left:5px;
+/* GARIS TIPIS ATAS BAWAH */
+.running-text::before,
+.running-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
 }
 
-/* ANIMASI */
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+.running-text::before {
+  top: 0;
+  background: linear-gradient(to right, transparent, #00cfff, transparent);
 }
-/* ===== DESKTOP LEBIH SULTAN ===== */
-@media (min-width:1024px){
 
-  .container{
-    max-width:1000px;
-  }
-
-  .faq{
-    transition:0.3s;
-  }
-
-  .faq:hover{
-    transform:scale(1.01);
-    box-shadow:0 0 20px rgba(0,150,255,0.4);
-  }
-
+.running-text::after {
+  bottom: 0;
+  background: linear-gradient(to right, transparent, #007bff, transparent);
 }
+
+/* FADE SAMPING */
+.running-text .fade-left,
+.running-text .fade-right {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 100%;
+}
+
+.running-text .fade-left {
+  left: 0;
+  background: linear-gradient(to right, #000, transparent);
+}
+
+.running-text .fade-right {
+  right: 0;
+  background: linear-gradient(to left, #000, transparent);
+}
+
+/* ANIMASI HALUS */
+@keyframes jalanText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+ /* ===== BUTTON PETIR BIRU SULTAN ===== */
+.btn-top{
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* RING PETIR */
+
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  animation: petirLoop 2s linear infinite;
+}
+
 /* FOOTER */
 .footer{text-align:center;padding:15px;font-size:12px;}
 </style>
@@ -345,7 +487,11 @@ background-repeat:no-repeat;
 <div class="header">
   PANDUAN <span class="red">CLICKBET88</span>
 </div>
-<!-- ===== HOME (CARD GAME) ===== -->
+<div class="running-text">
+  <div class="fade-left"></div>
+  <span>Selamat datang di CLICKBET88 Situs Gacor Terpercaya dan Event menarik setiap hari nya !</span>
+  <div class="fade-right"></div>
+</div>
 <!-- ================= HOME ================= -->
 <div class="container" id="homePage">
 
