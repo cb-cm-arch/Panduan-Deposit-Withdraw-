@@ -412,10 +412,22 @@ background-repeat:no-repeat;
   opacity:0;
 }
 
-/* AKTIF SAAT HOVER */
+/* DESKTOP (HOVER) */
 .btn-top:hover::before{
   opacity:1;
   animation:ombakLuar 1s linear infinite;
+}
+
+/* DESKTOP (HOVER) */
+.btn-top:hover::before{
+  opacity:1;
+  animation:ombakLuar 1s linear infinite;
+}
+
+/* MOBILE (SAAT DI TEKAN) */
+.btn-top:active::before{
+  opacity:1;
+  animation:ombakLuar 0.8s linear infinite;
 }
 
 /* GERAK OMBAK HALUS */
