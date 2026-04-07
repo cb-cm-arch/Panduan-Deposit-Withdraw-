@@ -85,8 +85,9 @@ background-repeat:no-repeat;
   max-width:900px;
   margin:auto;
 
-  /* TAMBAHAN BIAR GAK PUTUS */
   background:transparent;
+
+  min-height:calc(100vh - 200px); /* 🔥 KUNCI */
 }
 
 /* FAQ */
@@ -176,17 +177,19 @@ background-repeat:no-repeat;
 /* BUTTON */
 .btn-sultan{
   text-align:center;
-  margin:15px auto;
-  padding:10px;
-  width:80%;
-  border-radius:25px;
+  margin:10px auto;
+  padding:8px 12px;   /* 🔥 lebih kecil */
+  width:30%;          /* 🔥 dari 80% → 60% */
+
+  border-radius:20px;
   background:linear-gradient(45deg,#00c6ff,#0072ff);
   font-weight:bold;
+  font-size:13px;     /* 🔥 kecilin text dikit */
+
   cursor:pointer;
   transition:0.3s;
-  box-shadow:0 0 15px rgba(0,150,255,0.7);
+  box-shadow:0 0 12px rgba(0,150,255,0.6);
 }
-
 .btn-sultan:hover{
   transform:scale(1.05);
   box-shadow:0 0 30px rgba(0,200,255,1);
@@ -466,6 +469,62 @@ background-repeat:no-repeat;
   font-weight:bold;
   font-size:15px;
 }
+ /* ===== GRID GAME DESKTOP ===== */
+.grid-sultan{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:20px;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width:1024px){
+  .grid-sultan{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width:600px){
+  .grid-sultan{
+    grid-template-columns:1fr;
+  }
+}
+
+/* CARD STYLE BIAR MIRIP FOTO 2 */
+.card-sultan{
+  background:linear-gradient(145deg,#0a2a6c,#031a3c);
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 0 12px rgba(0,150,255,0.3);
+  transition:0.3s;
+}
+
+.card-sultan:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 25px rgba(0,200,255,0.9);
+}
+
+/* BIAR GAMBAR PROPORSI BAGUS */
+.slot-sultan img{
+  height:140px;
+  object-fit:cover;
+} 
+  /* CLOSE X DI KANAN ATAS */
+.btn-close{
+  position:absolute;
+
+ top:-12px;    /* 👉 posisi atas */
+  right:10px;    /* 👉 posisi kanan */
+
+  font-size:14px; /* 👉 kecil */
+  font-weight:bold;
+
+  color:#fff;     /* warna putih (clean) */
+  cursor:pointer;
+
+  background:none;   /* ❌ tanpa bulat */
+  box-shadow:none;   /* ❌ tanpa glow */
+}
 </style>
 </head>
 
@@ -480,9 +539,9 @@ background-repeat:no-repeat;
 </div>
 
 <div class="navbar">
- <a href="#" onclick="showHome()">HOME</a>
+<a href="javascript:void(0)" onclick="showHome()">HOME</a>
 <a href="javascript:void(0)" class="menu-merah" onclick="showPanduan()">CLICKBET88</a>
-  <a href="#" class="active">FAQ</a>
+  <a href="javascript:void(0)" onclick="showPanduan()">FAQ</a>
 </div>
 
 <div class="header">
@@ -493,93 +552,109 @@ background-repeat:no-repeat;
   <span>Selamat datang di CLICKBET88 Situs Gacor Terpercaya dan Event menarik setiap hari nya !</span>
   <div class="fade-right"></div>
 </div>
+  
 <!-- ================= HOME ================= -->
 <div class="container" id="homePage">
 
-  <!-- GAMBAR -->
-<div id="slotImage" class="slot-sultan">
-  <img src="https://i.ibb.co/RGMn5NHz/c77df877-476b-4ebe-a992-142840c2cb64.png">
+  <div class="grid-sultan">
+
+    <!-- SLOT -->
+    <div class="card-sultan">
+      <div id="slotImage" class="slot-sultan">
+        <img src="https://i.ibb.co/RGMn5NHz/c77df877-476b-4ebe-a992-142840c2cb64.png">
+      </div>
+
+      <div onclick="toggleSlot()" id="btnSlot" class="btn-sultan">
+        PANDUAN SLOT
+      </div>
+
+      <div id="slotText" style="display:none; text-align:center; position:relative;">
+
+  <!-- ❌ CLOSE -->
+  <div class="btn-close" onclick="toggleSlot()">✖</div>
+
+  <div class="title-sultan">PANDUAN SLOT CLICKBET88</div>
+
+<div class="list-sultan">
+✨ Pilih game slot favorit kakak yang lagi trending<br> 
+💰 Tentukan nominal bet sesuai saldo<br>
+⚙️ Atur jumlah spin manual atau auto spin<br>
+▶️ Klik SPIN dan nikmati sensasi gacor
 </div>
 
-  <!-- TULISAN -->
-<div onclick="toggleSlot()" id="btnSlot" class="btn-sultan">
-  PANDUAN SLOT
+<div class="title-sultan">🔥 Tips Biar Lebih Gacor</div>
+
+<div class="list-sultan">
+💡 Main di jam ramai biar feel lebih dapet<br>
+💡 Naikkan bet secara bertahap<br>
+💡 Gunakan auto spin 10–30 dulu untuk baca pola<br>
+💡 Jika sudah menang, langsung amankan saldo ya kakak
 </div>
 
-  <!-- ISI -->
-<div id="slotText" class="slot-text-sultan" style="display:none;">
+<div class="title-sultan">⚠️ Catatan Penting</div>
 
-  <div class="title-sultan">✨ Cara Main Slot untuk Kakak</div>
+<div class="list-sultan">
+Main santai aja kakak, jangan terburu-buru 🙏<br>
+Yang penting konsisten dan nikmati permainannya ✨
+</div>
+      </div>
+    </div>
+    </div>
 
-  <div class="list-sultan">
-    🎰 Pilih game slot favorit kakak<br>
-    💰 Tentukan nominal taruhan<br>
-    ⚙️ Atur jumlah spin<br>
-    ▶️ Klik SPIN untuk mulai
-  </div>
+    <!-- CASINO (WAJIB TERPISAH) -->
+    <div class="card-sultan">
+      <div id="casinoImage" class="slot-sultan">
+        <img src="https://i.postimg.cc/856pKDP3/Screenshot-5.png">
+      </div>
 
-  <div class="title-sultan" style="margin-top:20px;">💡 Tips Biar Gacor</div>
+      <div onclick="toggleCasino()" id="btnCasino" class="btn-sultan">
+        PANDUAN CASINO
+      </div>
 
-  <div class="list-sultan">
-    🔥 Main santai ya kakak<br>
-    🔥 Gunakan auto spin<br>
-    🔥 Perhatikan pola sebelum naik bet<br>
-    🔥 Kelola saldo dengan baik
-  </div>
+      <div id="casinoText" style="display:none; text-align:center; position:relative;">
 
-  <div class="title-sultan" style="margin-top:20px;">⚠️ Penting</div>
+  <!-- ❌ CLOSE -->
+  <div class="btn-close" onclick="toggleCasino()">✖</div>
 
-  <div class="list-sultan">
-    Jangan terlalu nafsu ya kakak 🙏
-  </div>
-
- </div>
-  <div id="casinoImage" class="slot-sultan">
-    <img src="https://i.postimg.cc/856pKDP3/Screenshot-5.png">
-  </div>
-
-  <!-- TOMBOL -->
-  <div onclick="toggleCasino()" id="btnCasino" class="btn-sultan">
-    PANDUAN CASINO
-  </div>
-<!-- BUTTON -->
-<div id="casinoText" style="display:none;">
-
-  <div class="title-sultan">🎰 Panduan Casino untuk Kakak</div>
+  <div class="title-sultan">PANDUAN CASINO CLICKBET88</div>
 
   <div class="list-sultan">
-    🎲 Pilih game casino favorit kakak<br>
-    🎡 Roulette, Baccarat, Sicbo, Dragon Tiger<br>
-    💰 Tentukan nominal taruhan<br>
-    ▶️ Klik BET untuk mulai bermain
+  🎲 Pilih game casino favorit kakak (Baccarat, Roulette, dll)<br>
+  💰 Tentukan nominal taruhan sesuai saldo<br>
+  🎯 Pilih posisi taruhan dengan yakin<br>
+  ▶️ Klik BET dan tunggu hasilnya
   </div>
 
-  <div class="title-sultan">🔥 Game Populer</div>
+  <div class="title-sultan">🔥 Game Favorit & Paling Dicari</div>
 
   <div class="list-sultan">
-    🎡 Roulette (angka & warna)<br>
-    🃏 Baccarat (Player vs Banker)<br>
-    🎲 Sicbo (dadu hoki)<br>
-    🐉 Dragon Tiger (cepat & gacor)
+  🃏 Baccarat → simpel & paling populer<br>
+  🎡 Roulette → cocok untuk feeling angka<br>
+  🎲 Sicbo → cepat & seru<br>
+  🐉 Dragon Tiger → simple tapi menegangkan
   </div>
 
-  <div class="title-sultan">💡 Tips Biar Gacor</div>
+  <div class="title-sultan">💡 Tips Biar Lebih Maksimal</div>
 
   <div class="list-sultan">
-    🔥 Main santai jangan emosi<br>
-    🔥 Perhatikan history permainan<br>
-    🔥 Gunakan modal bertahap<br>
-    🔥 Stop saat sudah profit
+  📊 Perhatikan history sebelum pasang<br>
+  📊 Gunakan modal bertahap (jangan all-in)<br>
+  📊 Stop saat sudah profit<br>
+  📊 Jangan main saat emosi ya kakak
   </div>
 
-  <div class="title-sultan">⚠️ Penting</div>
+  <div class="title-sultan">⚠️ Catatan Penting</div>
 
   <div class="list-sultan">
-    Jangan terlalu nafsu ya kakak 🙏
+  Main santai aja kakak, yang penting enjoy 🙏<br>
+  Tetap kontrol saldo dan jangan berlebihan ✨
   </div>
 
 </div>
+
   </div>
+
+</div> <!-- 🔥 INI WAJIB ADA -->
 <!-- ================= PANDUAN CLICKBET88 ================= -->
 <div class="container" id="panduanPage" style="display:none;">
 
@@ -794,12 +869,12 @@ function toggleSlot(){
 
   if(text.style.display === "none" || text.style.display === ""){
     text.style.display = "block";
-    img.style.display = "none";   // 🔥 gambar hilang
-    btn.innerHTML = "TUTUP";
+    img.style.display = "none";
+    btn.style.display = "none"; // 🔥 SEMBUNYIKAN BUTTON
   } else {
     text.style.display = "none";
-    img.style.display = "block";  // 🔥 gambar balik
-    btn.innerHTML = "PANDUAN SLOT";
+    img.style.display = "block";
+    btn.style.display = "block"; // 🔥 BALIKIN BUTTON
   }
 }
 </script>
@@ -811,14 +886,14 @@ function toggleCasino(){
 
   if(text.style.display === "none" || text.style.display === ""){
     text.style.display = "block";
-    img.style.display = "none";   // 🔥 INI KUNCI
-    btn.innerHTML = "TUTUP";
+    img.style.display = "none";
+    btn.style.display = "none";
   } else {
     text.style.display = "none";
-    img.style.display = "block";  // 🔥 BALIKIN GAMBAR
-    btn.innerHTML = "PANDUAN CASINO";
+    img.style.display = "block";
+    btn.style.display = "block";
   }
 }
-</script>
+</script>  
 </body>
 </html>
