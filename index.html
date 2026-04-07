@@ -598,9 +598,9 @@ Main santai aja kakak, jangan terburu-buru 🙏<br>
 Yang penting konsisten dan nikmati permainannya ✨
 </div>
       </div>
-    </div>
-    </div>
 
+ 
+ </div>
     <!-- CASINO (WAJIB TERPISAH) -->
     <div class="card-sultan">
       <div id="casinoImage" class="slot-sultan">
@@ -645,22 +645,19 @@ Yang penting konsisten dan nikmati permainannya ✨
 
   <div class="title-sultan">⚠️ Catatan Penting</div>
 
-  <div class="list-sultan">
-  Main santai aja kakak, yang penting enjoy 🙏<br>
-  Tetap kontrol saldo dan jangan berlebihan ✨
-  </div>
-
+<div class="list-sultan">
+Main santai aja kakak, yang penting enjoy 🙏<br>
+Tetap kontrol saldo dan jangan berlebihan ✨
 </div>
-
-  </div>
-
+ </div>
+</div>
 </div> <!-- 🔥 INI WAJIB ADA -->
 <!-- ================= PANDUAN CLICKBET88 ================= -->
 <div class="container" id="panduanPage" style="display:none;">
 
 
 <!-- DEPOSIT -->
-<div class="faq">
+<div class="faq active">
   <div class="faq-title">Cara Deposit</div>
   <div class="faq-content">
 
@@ -691,7 +688,7 @@ Yang penting konsisten dan nikmati permainannya ✨
 </div>
 
 <!-- WITHDRAW -->
-<div class="faq">
+<div class="faq active">
   <div class="faq-title">Cara Withdraw</div>
   <div class="faq-content">
 
@@ -719,7 +716,7 @@ Yang penting konsisten dan nikmati permainannya ✨
   </div>
 </div>
 <!-- TAMBAH REKENING -->
-<div class="faq">
+<div class="faq active">
   <div class="faq-title">Cara Tambah Rekening</div>
   <div class="faq-content">
 
@@ -752,7 +749,7 @@ Yang penting konsisten dan nikmati permainannya ✨
   </div>
 </div>
 <!-- CARA DAFTAR -->
-<div class="faq">
+<div class="faq active">
   <div class="faq-title">Cara Daftar</div>
   <div class="faq-content">
 
@@ -791,7 +788,7 @@ Yang penting konsisten dan nikmati permainannya ✨
   </div>
 </div>
 <!-- CARA CLAIM BONUS -->
-<div class="faq">
+<div class="faq active">
   <div class="faq-title">Cara Claim Bonus CLICKBET88</div>
   <div class="faq-content">
 
@@ -848,6 +845,12 @@ function showHome(){
 function showPanduan(){
   document.getElementById("homePage").style.display="none";
   document.getElementById("panduanPage").style.display="block";
+
+  // 🔥 AUTO BUKA DEPOSIT
+  let firstFaq = document.querySelector(".faq");
+  if(firstFaq){
+    firstFaq.classList.add("active");
+  }
 }
 </script>
 <div class="footer">© 2026 CLICKBET88</div>
